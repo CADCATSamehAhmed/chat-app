@@ -24,7 +24,7 @@ class SplashBody extends StatelessWidget {
         SizedBox(height: screenWidth * .4),
         Center(
             child: Text(
-          'The best chat app in this century',
+          'The best chat app in this century!',
           style: Fonts.font18,
         )),
       ],
