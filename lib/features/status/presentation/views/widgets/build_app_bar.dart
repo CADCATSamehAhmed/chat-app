@@ -11,7 +11,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      title: const Text(
+      title: Text(
         'WhatsApp',
         style: AppStyles.styleBlack30,
       ),

@@ -12,7 +12,7 @@ class BuildMyStatusTile extends StatelessWidget {
     return ListTile(
       onTap: () {},
       contentPadding: EdgeInsets.zero,
-      title: const Text(
+      title: Text(
         'My Status',
         style: AppStyles.styleBlack20,
       ),

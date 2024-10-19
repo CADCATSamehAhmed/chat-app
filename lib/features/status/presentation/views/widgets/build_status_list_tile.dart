@@ -22,7 +22,7 @@ class BuildStatusListView extends StatelessWidget {
         return ListTile(
           onTap: () {},
           contentPadding: const EdgeInsets.all(0),
-          title: const Text(
+          title: Text(
             'Moffa',
             style: AppStyles.styleBlack20,
           ),
