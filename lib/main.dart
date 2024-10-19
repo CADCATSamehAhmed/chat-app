@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:chat_app_team_mentor/features/status/presentation/views/status_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,10 +9,22 @@ void main() {
 
 class ChatApp extends StatelessWidget {
   const ChatApp({super.key});
+=======
+import 'package:chat_app/features/splash/presentation/views/splash_view.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+>>>>>>> origin/dev
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+<<<<<<< HEAD
       debugShowCheckedModeBanner: false,
       title: 'Chat App',
       theme: ThemeData(
@@ -23,3 +36,15 @@ class ChatApp extends StatelessWidget {
     );
   }
 }
+=======
+      debugShowCheckedModeBanner :false,
+      title: 'Chat App',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const SplashView(),
+    );
+  }
+}
+>>>>>>> origin/dev
