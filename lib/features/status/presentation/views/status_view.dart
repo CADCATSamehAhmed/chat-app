@@ -11,5 +11,6 @@ class StatusView extends StatelessWidget {
       appBar: BuildAppBar(),
       body: BodyStatusView(),
     );
+    
   }
 }
