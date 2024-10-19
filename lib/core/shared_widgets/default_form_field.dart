@@ -1,6 +1,6 @@
+import 'package:chat_app_team_mentor/core/themes/colors.dart';
+import 'package:chat_app_team_mentor/core/themes/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:chat_app/core/themes/colors.dart';
-import 'package:chat_app/core/themes/styles.dart';
 
 Widget defaultFormField({
   required TextEditingController controller,
@@ -19,7 +19,7 @@ Widget defaultFormField({
     controller: controller,
     keyboardType: type,
     obscureText: obscureText,
-    cursorColor: AppColors.mainColor,
+    cursorColor: AColors.mainColor,
     textAlign: TextAlign.start,
     validator: validate,
     onTap: onTap,
@@ -45,7 +45,7 @@ Widget defaultFormField({
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(5),
-        borderSide: BorderSide(color: AppColors.mainColor, width: 1.5),
+        borderSide: BorderSide(color: AColors.mainColor, width: 1.5),
       ),
     ),
   );

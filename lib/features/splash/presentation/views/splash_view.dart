@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:chat_app/features/splash/presentation/views/widgets/splash_body.dart';
+import 'package:chat_app_team_mentor/features/splash/presentation/views/widgets/splash_body.dart';
 import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 

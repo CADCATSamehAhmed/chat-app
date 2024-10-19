@@ -1,5 +1,5 @@
+import 'package:chat_app_team_mentor/core/themes/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:chat_app/core/themes/styles.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
