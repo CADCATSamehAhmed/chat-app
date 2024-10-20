@@ -37,7 +37,7 @@ class _SignInBodyState extends State<SignInBody> {
             buildCustomDivider(context),
             const Text(
               'Log in to your account',
-              style: AppStyles.textBoldBlack_25,
+              style: Fonts.font25,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 30),
