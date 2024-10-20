@@ -17,6 +17,7 @@ class _SignInBodyState extends State<SignInBody> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   bool isObscure = true;
+  GlobalKey<FormState> signInFormKey = GlobalKey<FormState>();
   @override
 /*************  ✨ Codeium Command ⭐  *************/
   /// A widget that builds a sign in screen.
@@ -53,18 +54,50 @@ class _SignInBodyState extends State<SignInBody> {
                   );
                 },
                 emailValidate: (String? value) {
+                  if (value!.isEmpty) {
+                    return 'Please enter an email';
+                  } else if (RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                    return 'Please enter a valid email';
+                  }
                   return null;
                 },
                 passValidate: (String? value) {
+                  if (value!.isEmpty) {
+                    return 'Please enter a password';
+                  }
+                  // Password must be at least 8 characters long
+                  else if (value.length < 8) {
+                    return 'Password must be at least 8 characters long';
+                  }
+                  // Password must contain at least one number
+                  else if (RegExp(r'[0-9]').hasMatch(value)) {
+                    return 'Password must contain at least one number';
+                  }
+                  // Password must contain at least one special character
+                  else if (RegExp(r'[!@#\$&*~]').hasMatch(value)) {
+                    return 'Password must contain at least one special character';
+                  }
                   return null;
                 },
+                signInFormKey: signInFormKey,
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(
                 bottom: 30,
               ),
-              child: buildAuthButton(context: context),
+              child: buildAuthButton(
+                context: context,
+                onPressed: () {
+                  if (signInFormKey.currentState!.validate()) {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const WhatsView(),
+                      ),
+                    );
+                  }
+                },
+              ),
             ),
             buildAuthFooter(context: context),
           ],
