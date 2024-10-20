@@ -7,10 +7,12 @@ Form buildSignInForm({
   required dynamic password,
   required bool isObscure,
   void Function()? onTap,
-  required String? Function(String? v)? emailValidate,
-  required String? Function(String? v)? passValidate,
+  required String? Function(String? v) emailValidate,
+  required String? Function(String? v) passValidate,
+  required Key? signInFormKey,
 }) {
   return Form(
+    key: signInFormKey,
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
