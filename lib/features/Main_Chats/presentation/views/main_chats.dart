@@ -8,7 +8,6 @@ class MainChats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body:ListView.builder(
         itemCount: contacts.length,
         itemBuilder: (context,index)=>ViewOfChat(name: contacts[index].name, number: contacts[index].number),

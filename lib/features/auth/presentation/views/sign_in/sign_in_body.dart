@@ -1,6 +1,8 @@
 import 'package:chat_app/core/shared_widgets/auth_button.dart';
 import 'package:chat_app/core/themes/styles.dart';
+import 'package:chat_app/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'widgets/auth_footer.dart';
 import 'widgets/form_sign_in.dart';
 import 'widgets/logo.dart';
@@ -89,11 +91,7 @@ class _SignInBodyState extends State<SignInBody> {
                 context: context,
                 onPressed: () {
                   if (signInFormKey.currentState!.validate()) {
-                    // Navigator.of(context).push(
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const WhatsView(),
-                    //   ),
-                    // );
+                    Get.to(()=>const HomeView());
                   }
                 },
               ),
