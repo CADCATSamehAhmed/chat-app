@@ -1,7 +1,6 @@
+import 'package:chat_app/core/themes/colors.dart';
+import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_chat/core/theme/app_color.dart';
-import 'package:mini_chat/core/theme/app_styles.dart';
-import 'package:mini_chat/features/whats/presentation/views/whats_view.dart';
 
 SizedBox buildAuthButton(
     {required BuildContext context,
@@ -17,7 +16,7 @@ SizedBox buildAuthButton(
       onPressed: onPressed,
       child: Text(
         isRegister ? 'Sign Up' : 'Log In',
-        style: Fonts.font25.copyWith(
+        style: AppFonts.font25.copyWith(
           fontSize: 20,
         ),
       ),

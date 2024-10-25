@@ -1,6 +1,7 @@
-import 'package:chat_app_team_mentor/core/themes/app_styles.dart';
-import 'package:chat_app_team_mentor/features/status/presentation/views/widgets/build_my_status_avatar.dart';
+import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
+
+import 'build_my_status_avatar.dart';
 
 class BuildMyStatusTile extends StatelessWidget {
   const BuildMyStatusTile({
@@ -14,11 +15,11 @@ class BuildMyStatusTile extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       title: Text(
         'My Status',
-        style: AppStyles.styleBlack20,
+        style: AppFonts.font20,
       ),
       subtitle: Text(
         'Tap to add status update',
-        style: AppStyles.styleBlack18,
+        style: AppFonts.font18,
       ),
       leading: const BuildMyStatusAvatar(),
     );

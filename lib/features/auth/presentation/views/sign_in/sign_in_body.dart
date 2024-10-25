@@ -1,10 +1,9 @@
+import 'package:chat_app/core/shared_widgets/auth_button.dart';
+import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_chat/core/theme/app_styles.dart';
-import 'package:mini_chat/core/widget/build_auth_button.dart';
-import 'package:mini_chat/core/widget/build_auth_footer.dart';
-import 'package:mini_chat/core/widget/build_custom_divider.dart';
-import 'package:mini_chat/core/widget/build_logo.dart';
-import 'package:mini_chat/features/auth/presentation/view/sign_in/widgets/form_sign_in.dart';
+import 'widgets/auth_footer.dart';
+import 'widgets/form_sign_in.dart';
+import 'widgets/logo.dart';
 
 class SignInBody extends StatefulWidget {
   const SignInBody({super.key});
@@ -35,10 +34,10 @@ class _SignInBodyState extends State<SignInBody> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             buildLogo(context),
-            buildCustomDivider(context),
-            const Text(
+            // buildCustomDivider(context),
+            Text(
               'Log in to your account',
-              style: Fonts.font25,
+              style: AppFonts.font25,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 30),
@@ -90,11 +89,11 @@ class _SignInBodyState extends State<SignInBody> {
                 context: context,
                 onPressed: () {
                   if (signInFormKey.currentState!.validate()) {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const WhatsView(),
-                      ),
-                    );
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (context) => const WhatsView(),
+                    //   ),
+                    // );
                   }
                 },
               ),

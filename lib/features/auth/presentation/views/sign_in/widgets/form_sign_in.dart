@@ -1,5 +1,5 @@
+import 'package:chat_app/core/shared_widgets/form_field.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_chat/core/shared_widgets/form_field.dart';
 
 Form buildSignInForm({
   required BuildContext context,

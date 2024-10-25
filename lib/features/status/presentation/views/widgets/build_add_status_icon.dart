@@ -1,4 +1,4 @@
-import 'package:chat_app_team_mentor/core/themes/app_colors.dart';
+import 'package:chat_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 class BuildAddStatusIcon extends StatelessWidget {
@@ -13,9 +13,9 @@ class BuildAddStatusIcon extends StatelessWidget {
       height: 20,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: AppColors.white,
+        color: Colors.white,
         border: Border.all(
-          color: AppColors.green,
+          color: AppColors.mainColor,
           width: 2,
         ),
       ),
@@ -24,9 +24,9 @@ class BuildAddStatusIcon extends StatelessWidget {
           iconSize: 15,
           padding: EdgeInsets.zero,
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             Icons.add,
-            color: AppColors.green,
+            color: AppColors.mainColor,
             size: 15,
           ),
         ),

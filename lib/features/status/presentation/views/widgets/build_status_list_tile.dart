@@ -1,5 +1,5 @@
-import 'package:chat_app_team_mentor/core/themes/app_colors.dart';
-import 'package:chat_app_team_mentor/core/themes/app_styles.dart';
+import 'package:chat_app/core/themes/colors.dart';
+import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -24,17 +24,17 @@ class BuildStatusListView extends StatelessWidget {
           contentPadding: const EdgeInsets.all(0),
           title: Text(
             'Moffa',
-            style: AppStyles.styleBlack20,
+            style: AppFonts.font20,
           ),
           subtitle: Text(
             '$dayName, $time',
-            style: AppStyles.styleBlack18,
+            style: AppFonts.font18,
           ),
           leading: Container(
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: borderColor ?? AppColors.green,
+                color: borderColor ?? AppColors.mainColor,
                 width: 2,
               ),
             ),

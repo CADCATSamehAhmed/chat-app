@@ -1,5 +1,4 @@
-import 'package:chat_app_team_mentor/core/themes/app_colors.dart';
-import 'package:chat_app_team_mentor/core/themes/app_styles.dart';
+import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 
 class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -13,7 +12,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       title: Text(
         'WhatsApp',
-        style: AppStyles.styleBlack30,
+        style: AppFonts.font25,
       ),
       actions: [
         IconButton(
@@ -21,7 +20,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {},
           icon: const Icon(
             Icons.search,
-            color: AppColors.black,
+            color: Colors.black,
           ),
         ),
         Padding(
@@ -40,7 +39,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: SizedBox(
           height: 5,
           child: Divider(
-            color: AppColors.black,
+            color: Colors.black,
             thickness: 0.5,
           ),
         ),

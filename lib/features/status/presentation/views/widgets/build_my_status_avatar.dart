@@ -1,5 +1,6 @@
-import 'package:chat_app_team_mentor/features/status/presentation/views/widgets/build_add_status_icon.dart';
 import 'package:flutter/material.dart';
+
+import 'build_add_status_icon.dart';
 
 class BuildMyStatusAvatar extends StatelessWidget {
   const BuildMyStatusAvatar({

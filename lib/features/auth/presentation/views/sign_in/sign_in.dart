@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_chat/features/auth/presentation/view/sign_in/sign_in_body.dart';
+import 'sign_in_body.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});

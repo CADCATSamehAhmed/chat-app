@@ -1,7 +1,7 @@
-import 'package:chat_app_team_mentor/core/constants/app_images.dart';
-import 'package:chat_app_team_mentor/core/constants/variables.dart';
-import 'package:chat_app_team_mentor/core/themes/app_colors.dart';
-import 'package:chat_app_team_mentor/core/themes/app_styles.dart';
+import 'package:chat_app/core/constants/app_images.dart';
+import 'package:chat_app/core/constants/variables.dart';
+import 'package:chat_app/core/themes/colors.dart';
+import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 
 class SplashBody extends StatelessWidget {
@@ -19,13 +19,13 @@ class SplashBody extends StatelessWidget {
         ),
         Text(
           'WhatsUp',
-          style: AppStyles.font25.copyWith(color: AppColors.green),
+          style: AppFonts.font25.copyWith(color: AppColors.mainColor),
         ),
         SizedBox(height: screenWidth * .4),
         Center(
             child: Text(
           'The best chat app in this century!',
-          style: AppStyles.font18,
+          style: AppFonts.font18,
         )),
       ],
     );

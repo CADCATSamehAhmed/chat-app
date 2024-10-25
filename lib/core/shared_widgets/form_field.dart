@@ -1,3 +1,6 @@
+import 'package:chat_app/core/themes/colors.dart';
+import 'package:flutter/material.dart';
+
 Widget defaultTextForm({
   required String label,
   required TextEditingController controller,
@@ -18,9 +21,9 @@ Widget defaultTextForm({
       obscureText: obscureText,
       keyboardType: textInputType,
       decoration: InputDecoration(
-        focusedBorder: const OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: AppColor.primaryColor,
+            color: AppColors.mainColor,
             width: 2.0,
           ), // Border when focused
         ),

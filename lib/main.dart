@@ -1,8 +1,6 @@
-import 'package:chat_app_team_mentor/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'features/Main_Chats/presentation/main_chats.dart';
+import 'features/splash/presentation/views/splash_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +20,7 @@ class ChatApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MainChats(),
+      home: const SplashView(),
     );
   }
 }

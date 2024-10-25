@@ -1,8 +1,8 @@
-import 'package:chat_app_team_mentor/core/themes/app_colors.dart';
-import 'package:chat_app_team_mentor/features/status/presentation/views/widgets/build_my_status_tile.dart';
-import 'package:chat_app_team_mentor/features/status/presentation/views/widgets/build_section_title.dart';
-import 'package:chat_app_team_mentor/features/status/presentation/views/widgets/build_status_list_tile.dart';
 import 'package:flutter/material.dart';
+
+import 'build_my_status_tile.dart';
+import 'build_section_title.dart';
+import 'build_status_list_tile.dart';
 
 class BodyStatusView extends StatelessWidget {
   const BodyStatusView({
@@ -30,7 +30,7 @@ class BodyStatusView extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           BuildStatusListView(
-            borderColor: AppColors.black.withOpacity(
+            borderColor: Colors.black.withOpacity(
               0.3,
             ),
           ),

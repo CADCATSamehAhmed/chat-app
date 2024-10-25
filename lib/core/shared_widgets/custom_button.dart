@@ -1,4 +1,4 @@
-import 'package:chat_app_team_mentor/core/themes/app_styles.dart';
+import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -51,7 +51,7 @@ class CustomButton extends StatelessWidget {
                   if (iconData != null) const SizedBox(width: 11),
                   Text(
                     text,
-                    style: AppStyles.font25.copyWith(
+                    style: AppFonts.font25.copyWith(
                       color: textColor ?? Colors.black,
                       fontSize: fontSize ?? 25,
                     ),

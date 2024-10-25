@@ -1,5 +1,5 @@
-import 'package:chat_app_team_mentor/core/themes/app_colors.dart';
-import 'package:chat_app_team_mentor/core/themes/app_styles.dart';
+import 'package:chat_app/core/themes/colors.dart';
+import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 
 Widget defaultFormField({
@@ -19,17 +19,17 @@ Widget defaultFormField({
     controller: controller,
     keyboardType: type,
     obscureText: obscureText,
-    cursorColor: AppColors.green,
+    cursorColor: AppColors.mainColor,
     textAlign: TextAlign.start,
     validator: validate,
     onTap: onTap,
-    style: AppStyles.font14,
+    style: AppFonts.font14,
     decoration: InputDecoration(
       filled: true,
       fillColor: filledColor,
       labelText: label,
       hintText: hint,
-      hintStyle: AppStyles.font18.copyWith(color: Colors.grey.shade600),
+      hintStyle: AppFonts.font18.copyWith(color: Colors.grey.shade600),
       prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
       suffixIcon: suffixIcon != null
           ? IconButton(
@@ -45,7 +45,7 @@ Widget defaultFormField({
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(5),
-        borderSide: const BorderSide(color: AppColors.green, width: 1.5),
+        borderSide: BorderSide(color: AppColors.mainColor, width: 1.5),
       ),
     ),
   );

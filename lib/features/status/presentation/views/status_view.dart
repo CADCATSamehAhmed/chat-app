@@ -1,6 +1,6 @@
-import 'package:chat_app_team_mentor/features/status/presentation/views/widgets/body_status_view.dart';
-import 'package:chat_app_team_mentor/features/status/presentation/views/widgets/build_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'widgets/body_status_view.dart';
+import 'widgets/build_app_bar.dart';
 
 class StatusView extends StatelessWidget {
   const StatusView({super.key});
@@ -11,9 +11,5 @@ class StatusView extends StatelessWidget {
       appBar: BuildAppBar(),
       body: BodyStatusView(),
     );
-    
   }
-
-
-  
 }

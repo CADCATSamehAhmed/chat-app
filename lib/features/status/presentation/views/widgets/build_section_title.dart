@@ -1,4 +1,4 @@
-import 'package:chat_app_team_mentor/core/themes/app_styles.dart';
+import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 
 class BuildSectionTitle extends StatelessWidget {
@@ -13,7 +13,7 @@ class BuildSectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: AppStyles.styleBlack18,
+      style: AppFonts.font18,
     );
   }
 }
