@@ -1,4 +1,5 @@
 import 'package:chat_app/core/shared_widgets/form_field.dart';
+import 'package:chat_app/core/shared_widgets/custom_divider.dart';
 import 'package:flutter/material.dart';
 
 Form buildSignInForm({
