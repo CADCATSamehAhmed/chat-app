@@ -7,7 +7,11 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ProfileBody(),
+      appBar: AppBar(
+        title: const Text('Profile'),
+        backgroundColor: Colors.green[400],
+      ),
+      body: const ProfileBody(),
     );
   }
 }

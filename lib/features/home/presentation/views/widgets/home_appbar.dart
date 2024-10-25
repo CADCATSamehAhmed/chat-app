@@ -1,5 +1,6 @@
 import 'package:chat_app/core/themes/styles.dart';
 import 'package:chat_app/features/home/presentation/views/widgets/search_body.dart';
+import 'package:chat_app/features/profile/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
 
 class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -34,6 +35,8 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
               onSelected: (String value) {
                 if (value == 'New Group') {
                 } else if (value == 'Profile') {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ProfileView()));
                 } else if (value == 'Logout') {}
               },
               itemBuilder: (BuildContext context) {
@@ -75,4 +78,5 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(56);
 }
+
 final List<String> items = ['New Group', 'Profile', 'Logout'];
