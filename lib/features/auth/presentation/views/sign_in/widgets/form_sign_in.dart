@@ -24,10 +24,7 @@ Form buildSignInForm({
           iconData: Icons.email,
           onValidate: emailValidate,
         ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.03,
-          width: MediaQuery.of(context).size.width * 0.03,
-        ),
+        buildCustomDivider(context),
         defaultTextForm(
           label: 'enter your password',
           onValidate: passValidate,
