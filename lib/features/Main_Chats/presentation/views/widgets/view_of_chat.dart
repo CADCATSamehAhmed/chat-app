@@ -15,7 +15,7 @@ class ViewOfChat extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           const CircleAvatar(
-            radius: 45,
+            radius: 35,
             foregroundColor: Colors.white,
             backgroundColor: Color(0xFF9E9E9E),
             child: Icon(

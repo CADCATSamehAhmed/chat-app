@@ -57,7 +57,7 @@ class _SignInBodyState extends State<SignInBody> {
                 emailValidate: (String? value) {
                   if (value!.isEmpty) {
                     return 'Please enter an email';
-                  } else if (RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                  } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
                     return 'Please enter a valid email';
                   }
                   return null;
@@ -71,11 +71,11 @@ class _SignInBodyState extends State<SignInBody> {
                     return 'Password must be at least 8 characters long';
                   }
                   // Password must contain at least one number
-                  else if (RegExp(r'[0-9]').hasMatch(value)) {
+                  else if (!RegExp(r'[0-9]').hasMatch(value)) {
                     return 'Password must contain at least one number';
                   }
                   // Password must contain at least one special character
-                  else if (RegExp(r'[!@#\$&*~]').hasMatch(value)) {
+                  else if (!RegExp(r'[!@#\$&*~]').hasMatch(value)) {
                     return 'Password must contain at least one special character';
                   }
                   return null;
@@ -91,7 +91,7 @@ class _SignInBodyState extends State<SignInBody> {
                 context: context,
                 onPressed: () {
                   if (signInFormKey.currentState!.validate()) {
-                    Get.to(()=>const HomeView());
+                    Get.to(() => const HomeView());
                   }
                 },
               ),

@@ -12,6 +12,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final GlobalKey menuKey = GlobalKey();
     return AppBar(
+      automaticallyImplyLeading: false,
       elevation: 0,
       title: Text(
         'WhatsApp',

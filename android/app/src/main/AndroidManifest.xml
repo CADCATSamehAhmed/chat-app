@@ -1,10 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-<<<<<<< HEAD
-        android:label="chat_app_team_mentor"
-=======
         android:label="chat_app"
->>>>>>> origin/dev
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
