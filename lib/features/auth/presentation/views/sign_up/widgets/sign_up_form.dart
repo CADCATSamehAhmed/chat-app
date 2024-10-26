@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:chat_app/core/shared_widgets/custom_button.dart';
 import 'package:chat_app/core/shared_widgets/default_form_field.dart';
+import 'package:chat_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -48,7 +49,7 @@ class _SignUpFormState extends State<SignUpForm> {
             validate: (value) {
               if (value!.isEmpty) {
                 return 'name must not be empty';
-              }else if(value.contains('@gmail.com')){
+              } else if (value.contains('@gmail.com')) {
                 return 'name must not contain @gmail.com';
               }
               return null;
@@ -109,6 +110,8 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           const SizedBox(height: 30),
           CustomButton(
+            height: 60,
+            backgroundColor: AppColors.mainColor,
             text: "Sign Up",
             onPressed: () {
               if (formKey.currentState!.validate()) {

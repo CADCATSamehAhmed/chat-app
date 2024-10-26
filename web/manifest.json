@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
+    "name": "chat_app_team_mentor",
+    "short_name": "chat_app_team_mentor",
+=======
     "name": "chat_app",
     "short_name": "chat_app",
+>>>>>>> origin/dev
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

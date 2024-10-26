@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/core/themes/styles.dart';
+import 'package:flutter/material.dart';
 
 Widget defaultFormField({
   required TextEditingController controller,
@@ -23,13 +23,13 @@ Widget defaultFormField({
     textAlign: TextAlign.start,
     validator: validate,
     onTap: onTap,
-    style: Fonts.font14,
+    style: AppFonts.font14,
     decoration: InputDecoration(
       filled: true,
       fillColor: filledColor,
       labelText: label,
       hintText: hint,
-      hintStyle: Fonts.font18.copyWith(color: Colors.grey.shade600),
+      hintStyle: AppFonts.font18.copyWith(color: Colors.grey.shade600),
       prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
       suffixIcon: suffixIcon != null
           ? IconButton(
@@ -41,6 +41,18 @@ Widget defaultFormField({
         borderRadius: BorderRadius.circular(25),
         borderSide: const BorderSide(
           color: Colors.black,
+        ),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(25),
+        borderSide: const BorderSide(
+          color: Colors.red,
+        ),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(25),
+        borderSide: const BorderSide(
+          color: Colors.red,
         ),
       ),
       focusedBorder: OutlineInputBorder(

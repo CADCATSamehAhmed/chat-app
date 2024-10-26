@@ -1,11 +1,11 @@
 import 'dart:developer';
-
 import 'package:chat_app/core/constants/images.dart';
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/core/themes/styles.dart';
-import 'package:chat_app/features/sign_up/presentation/view/widgets/sign_up_form.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/sign_up_form.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
@@ -26,7 +26,7 @@ class SignUpView extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 'Register To New Account',
-                style: Fonts.font23,
+                style: AppFonts.font23,
               ),
               const SizedBox(height: 10),
               const SignUpForm(),
@@ -38,10 +38,11 @@ class SignUpView extends StatelessWidget {
                     TextSpan(
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
+                          Navigator.of(context).pop();
                           log('GOTO LOGIN');
                         },
                       text: ' Login here',
-                      style: Fonts.font18.copyWith(
+                      style: AppFonts.font18.copyWith(
                         color: AppColors.mainColor,
                       ),
                     ),
