@@ -1,5 +1,6 @@
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomNavBar extends StatelessWidget {
   final int currentIndex;
@@ -10,10 +11,10 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: currentIndex,
-      items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.message,size: 25,),label: 'Chats'),
-        BottomNavigationBarItem(icon: Icon(Icons.lightbulb_rounded,size: 25,),label: 'Status'),
-        BottomNavigationBarItem(icon: Icon(Icons.call,size: 25,),label: 'Calls'),
+      items: [
+        BottomNavigationBarItem(icon: Icon(Icons.message,size: 25.sp,),label: 'Chats'),
+        BottomNavigationBarItem(icon: Icon(Icons.lightbulb_rounded,size: 25.sp,),label: 'Status'),
+        BottomNavigationBarItem(icon: Icon(Icons.call,size: 25.sp,),label: 'Calls'),
       ],
       onTap:onTap,
       backgroundColor: Colors.white,

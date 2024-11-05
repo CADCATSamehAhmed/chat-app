@@ -3,30 +3,31 @@ import 'package:chat_app/features/profile/presentation/views/widgets/profile_ima
 import 'package:chat_app/features/profile/presentation/views/widgets/profile_name_field.dart';
 import 'package:chat_app/features/profile/presentation/views/widgets/profile_phone_number_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(15).w,
         child: Column(
           children: [
-            Profileimage(),
+            const ProfileImage(),
             SizedBox(
-              height: 20,
+              height: 20.h,
             ),
-            ProfileNameField(),
+            const ProfileNameField(),
             SizedBox(
-              height: 20,
+              height: 20.h,
             ),
-            ProfilePhoneNumberField(),
+            const ProfilePhoneNumberField(),
             SizedBox(
-              height: 20,
+              height: 20.h,
             ),
-            ProfileButton(),
+            const ProfileButton(),
           ],
         ),
       ),

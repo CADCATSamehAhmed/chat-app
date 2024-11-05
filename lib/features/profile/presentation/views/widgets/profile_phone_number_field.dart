@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfilePhoneNumberField extends StatelessWidget {
   const ProfilePhoneNumberField({super.key});
@@ -10,7 +11,7 @@ class ProfilePhoneNumberField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: 'Phone',
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.r),
         ),
       ),
       onChanged: (value){

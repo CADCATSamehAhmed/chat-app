@@ -1,6 +1,7 @@
+import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'build_my_status_avatar.dart';
 
 class BuildMyStatusTile extends StatelessWidget {
@@ -11,8 +12,9 @@ class BuildMyStatusTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      splashColor: AppColors.mainColor,
       onTap: () {},
-      contentPadding: EdgeInsets.zero,
+      contentPadding: const EdgeInsets.symmetric(horizontal: 20).w,
       title: Text(
         'My Status',
         style: AppFonts.font20,
