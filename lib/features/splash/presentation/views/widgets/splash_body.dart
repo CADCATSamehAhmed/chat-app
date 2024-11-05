@@ -1,6 +1,6 @@
-import 'package:chat_app/core/constants/images.dart';
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/core/themes/styles.dart';
+import 'package:chat_app/features/auth/presentation/views/widgets/logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,21 +9,16 @@ class SplashBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    screenWidth=MediaQuery.sizeOf(context).width;
-    screenHeight=MediaQuery.sizeOf(context).height;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image(
-          image: const AssetImage(Images.logo),
-          height: 216.w,
-          width: 216.w,
-        ),
+        buildLogo(context,width: 216.w,),
+        SizedBox(height: 30.h),
         Text(
           'WhatsUp',
           style: AppFonts.font25.copyWith(color: AppColors.mainColor),
         ),
-        SizedBox(height: 135.h),
+        SizedBox(height: 120.h),
         Center(
             child: Text(
           'The best chat app in this century!',
