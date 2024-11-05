@@ -15,8 +15,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_fonts: ^6.2.1
   animate_do: ^3.3.4
-  get: ^4.6.6
   flutter_svg: ^2.0.10+1
+  flutter_screenutil: ^5.9.3
+  page_transition: ^2.1.0
 
 dev_dependencies:
   flutter_test:

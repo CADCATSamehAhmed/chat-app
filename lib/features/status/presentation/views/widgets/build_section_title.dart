@@ -1,5 +1,6 @@
 import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BuildSectionTitle extends StatelessWidget {
   const BuildSectionTitle({
@@ -11,9 +12,12 @@ class BuildSectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: AppFonts.font18,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20).w,
+      child: Text(
+        title,
+        style: AppFonts.font18,
+      ),
     );
   }
 }

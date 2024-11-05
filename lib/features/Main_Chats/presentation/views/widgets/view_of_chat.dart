@@ -1,5 +1,7 @@
 import 'package:chat_app/core/themes/colors.dart';
+import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ViewOfChat extends StatelessWidget {
   final String name;
@@ -9,64 +11,70 @@ class ViewOfChat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          const CircleAvatar(
-            radius: 45,
-            foregroundColor: Colors.white,
-            backgroundColor: Color(0xFF9E9E9E),
-            child: Icon(
-              Icons.person,
-              size: 45,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 40),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  name,
-                  style: const TextStyle(
-                      fontSize: 26, fontWeight: FontWeight.bold),
-                ),
-                Text("# $number",
-                    style: const TextStyle(fontSize: 22, color: Colors.grey))
-              ],
-            ),
-          ),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  "12:00 PM",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.grey),
-                ),
+    return InkWell(
+      splashColor: AppColors.mainColor,
+      onTap: (){
+
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+        child: Row(
+          children: [
+            CircleAvatar(
+              radius: 30.r,
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.grey.shade400,
+              child: Icon(
+                Icons.person,
+                size: 25.sp,
               ),
-              const SizedBox(
-                height: 10,
+            ),
+            SizedBox(width: 15.w),
+            SizedBox(
+              width: 250.w,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        name,
+                        style:
+                            AppFonts.font20.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10).w,
+                        child: Text(
+                          "12:00 PM",
+                          style: AppFonts.font14.copyWith(color: Colors.grey),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "# $number",
+                        style: AppFonts.font18.copyWith(color: Colors.grey),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30).w,
+                        child: CircleAvatar(
+                          radius: 10.r,
+                          backgroundColor: AppColors.mainColor,
+                          child: Text("2",
+                              style: AppFonts.font12.copyWith(color: Colors.white)),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 50, bottom: 45),
-                child: CircleAvatar(
-                  backgroundColor: AppColors.mainColor,
-                  foregroundColor: Colors.white,
-                  child: const Text("2"),
-                ),
-              )
-            ],
-          )
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }

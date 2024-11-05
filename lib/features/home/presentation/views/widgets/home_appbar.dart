@@ -2,6 +2,7 @@ import 'package:chat_app/core/themes/styles.dart';
 import 'package:chat_app/features/home/presentation/views/widgets/search_body.dart';
 import 'package:chat_app/features/profile/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BuildAppBar({
@@ -19,7 +20,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          iconSize: 30,
+          iconSize: 25.sp,
           onPressed: () {
             showSearch(context: context, delegate: CustomSearch());
           },
@@ -29,7 +30,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(right: 15),
+          padding: const EdgeInsets.only(right: 15).w,
           child: PopupMenuButton<String>(
               key: menuKey,
               onSelected: (String value) {
@@ -55,18 +56,19 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
                   final dynamic state = menuKey.currentState;
                   state.showButtonMenu();
                 },
-                icon: const Icon(
+                icon: Icon(
                   Icons.more_vert,
                   color: Colors.black,
+                  size: 25.sp,
                 ),
               )),
         ),
       ],
-      bottom: const PreferredSize(
-        preferredSize: Size.fromHeight(5),
+      bottom: PreferredSize(
+        preferredSize: Size.fromHeight(5.h),
         child: SizedBox(
-          height: 5,
-          child: Divider(
+          height: 5.h,
+          child: const Divider(
             color: Colors.black,
             thickness: 0.5,
           ),
@@ -76,7 +78,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(56);
+  Size get preferredSize => Size.fromHeight(60.h);
 }
 
 final List<String> items = ['New Group', 'Profile', 'Logout'];

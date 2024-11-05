@@ -1,6 +1,7 @@
 import 'dart:async';
-import 'package:chat_app/features/auth/presentation/views/sign_in/sign_in.dart';
+import 'package:chat_app/features/auth/presentation/views/sign_in/sign_in_view.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'widgets/splash_body.dart';
 
 class SplashView extends StatefulWidget {
@@ -17,9 +18,11 @@ class SplashViewState extends State<SplashView> {
     Future.delayed(const Duration(seconds: 3)).then(
       (value) {
         if (mounted) {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-              builder: (context) => const SignIn(),
+          Navigator.pushReplacement(
+            context,
+            PageTransition(
+              type: PageTransitionType.fade,
+              child: const SignInView(),
             ),
           );
         }

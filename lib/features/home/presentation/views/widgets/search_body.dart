@@ -1,6 +1,6 @@
-import 'package:chat_app/core/constants/variables.dart';
 import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomSearch extends SearchDelegate{
   List<String> elements= ['1','2','3'];
@@ -32,7 +32,7 @@ class CustomSearch extends SearchDelegate{
       }
     }
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: screenWidth*.05),
+      padding: const EdgeInsets.symmetric(horizontal: 20).w,
       children: [
         Text(
           '${matchQuery.length} result:',
@@ -64,14 +64,14 @@ class CustomSearch extends SearchDelegate{
       }
     }
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: screenWidth*.05),
+      padding: const EdgeInsets.symmetric(horizontal: 20).w,
       children: [
         Text(
           'most Popular Searches',
           style: AppFonts.font23,
           textAlign: TextAlign.start,
         ),
-        SizedBox(height: screenWidth*.05,),
+        SizedBox(height: 20.h,),
         ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),

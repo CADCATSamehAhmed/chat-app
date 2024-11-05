@@ -1,8 +1,8 @@
-import 'package:chat_app/core/constants/app_images.dart';
-import 'package:chat_app/core/constants/variables.dart';
+import 'package:chat_app/core/constants/images.dart';
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashBody extends StatelessWidget {
   const SplashBody({super.key});
@@ -13,15 +13,15 @@ class SplashBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image(
-          image: const AssetImage(AppImages.logo),
-          height: screenWidth * .6,
-          width: screenWidth * .6,
+          image: const AssetImage(Images.logo),
+          height: 216.w,
+          width: 216.w,
         ),
         Text(
           'WhatsUp',
           style: AppFonts.font25.copyWith(color: AppColors.mainColor),
         ),
-        SizedBox(height: screenWidth * .4),
+        SizedBox(height: 135.h),
         Center(
             child: Text(
           'The best chat app in this century!',

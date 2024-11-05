@@ -1,6 +1,7 @@
 import 'package:chat_app/core/shared_widgets/default_floating_button.dart';
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeFloatingActionButton extends StatelessWidget {
   final int index;
@@ -26,6 +27,7 @@ class HomeFloatingActionButton extends StatelessWidget {
             onPressed: () {},
             icon: Icons.chat,
           ),
+          SizedBox(height: 10.h),
           DefaultFloatingButton(
             tooltip: 'add media status',
             onPressed: () async {},
