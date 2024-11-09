@@ -1,6 +1,7 @@
 import 'package:chat_app/features/auth/data/view_model/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'sign_in_body.dart';
 
 class SignIn extends StatefulWidget {

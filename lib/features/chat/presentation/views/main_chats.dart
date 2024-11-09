@@ -1,5 +1,6 @@
-import 'package:chat_app/features/main_chats/data/model/contact_details.dart';
+import 'package:chat_app/features/Main_Chats/data/model/contact_details.dart';
 import 'package:flutter/material.dart';
+
 import 'widgets/view_of_chat.dart';
 
 class MainChats extends StatelessWidget {

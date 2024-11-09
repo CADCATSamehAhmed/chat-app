@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileButton extends StatelessWidget {
   const ProfileButton({super.key});
@@ -14,7 +15,7 @@ class ProfileButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             backgroundColor: Colors.green,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20.r),
             )));
   }
 }

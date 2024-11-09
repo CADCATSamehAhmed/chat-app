@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileNameField extends StatelessWidget {
   //final TextEditingController profileNameController ;
@@ -11,7 +12,7 @@ class ProfileNameField extends StatelessWidget {
       decoration: InputDecoration(
           labelText: 'Name',
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(20.r),
           )
       ),
       onChanged: (value){
