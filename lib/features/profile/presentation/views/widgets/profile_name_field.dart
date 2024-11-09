@@ -7,19 +7,41 @@ class ProfileNameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: TextEditingController(text: "Marwan Ali") ,
-      decoration: InputDecoration(
-          labelText: 'Name',
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.r),
-          )
+    return  Container(
+      margin: EdgeInsets.symmetric(horizontal:20.w,vertical:10.h),
+      decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey.shade400,
+                spreadRadius: 3,
+                blurRadius: 15,
+                offset: const Offset(-1, 15)
+            )
+          ]
       ),
-      onChanged: (value){
-        /* change of update profile
-      * viewModel.updateProfile(
-                value, viewModel.userProfile.phoneNumber);*/
-      },
+      child: TextField(
+        keyboardType: TextInputType.text,
+        controller: TextEditingController(text: "Marwan Ali") ,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          hintText: 'Name',
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30.r),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30.r),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30.r),
+          ),
+        ),
+        onChanged: (value){
+          /* change of update profile
+        * viewModel.updateProfile(
+                  value, viewModel.userProfile.phoneNumber);*/
+        },
+      ),
     );
   }
 }

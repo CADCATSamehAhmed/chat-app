@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:chat_app/features/auth/presentation/views/sign_in/sign_in_view.dart';
+import 'package:chat_app/features/auth/presentation/views/sign_in_view.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'widgets/splash_body.dart';

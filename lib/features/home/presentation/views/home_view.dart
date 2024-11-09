@@ -1,5 +1,4 @@
-import 'package:chat_app/core/themes/colors.dart';
-import 'package:chat_app/features/Main_Chats/presentation/views/main_chats.dart';
+import 'package:chat_app/features/chat/presentation/views/main_chats.dart';
 import 'package:chat_app/features/home/presentation/views/widgets/bottom_nav_bar.dart';
 import 'package:chat_app/features/home/presentation/views/widgets/home_floating_action_button.dart';
 import 'package:chat_app/features/status/presentation/views/status_view.dart';
@@ -18,7 +17,6 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            backgroundColor: AppColors.scaffoldBackGroundColor,
             appBar: const BuildAppBar(),
             body: homeScreens[currentIndex],
             bottomNavigationBar: BottomNavBar(

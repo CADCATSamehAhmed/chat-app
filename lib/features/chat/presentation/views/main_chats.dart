@@ -1,6 +1,6 @@
-import 'package:chat_app/features/Main_Chats/data/model/contact_details.dart';
+import 'package:chat_app/features/chat/data/model/contact_details.dart';
 import 'package:flutter/material.dart';
-import 'widgets/view_of_chat.dart';
+import 'widgets/chat_window.dart';
 
 class MainChats extends StatelessWidget {
   const MainChats({super.key});
@@ -10,7 +10,7 @@ class MainChats extends StatelessWidget {
     return Scaffold(
       body:ListView.builder(
         itemCount: contacts.length,
-        itemBuilder: (context,index)=>ViewOfChat(name: contacts[index].name, number: contacts[index].number),
+        itemBuilder: (context,index)=>ChatWindow(name: contacts[index].name, number: contacts[index].number),
       )
     );
   }

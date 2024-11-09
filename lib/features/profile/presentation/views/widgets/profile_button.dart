@@ -1,3 +1,5 @@
+import 'package:chat_app/core/shared_widgets/custom_button.dart';
+import 'package:chat_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -6,17 +8,19 @@ class ProfileButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ElevatedButton.icon(
-        onPressed: (){
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal:30,vertical: 10).w,
+      child: CustomButton(
+        height: 50.h,
+        backgroundColor: AppColors.mainColor,
+        text: 'Save Profile',
+        fontSize: 20.sp,
+        textColor: Colors.white,
+        iconData: Icons.save,
+        onPressed: () {
           // fun to save btn
         },
-        icon: const Icon(Icons.save),
-        label: const Text('Save Profile'),
-        style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.green,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.r),
-            )
-        ));
+      ),
+    );
   }
 }

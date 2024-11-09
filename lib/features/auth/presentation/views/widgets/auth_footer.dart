@@ -1,6 +1,6 @@
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/core/themes/styles.dart';
-import 'package:chat_app/features/auth/presentation/views/sign_up/sign_up_view.dart';
+import 'package:chat_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';

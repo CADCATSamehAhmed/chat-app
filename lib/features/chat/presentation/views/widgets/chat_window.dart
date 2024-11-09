@@ -3,11 +3,11 @@ import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ViewOfChat extends StatelessWidget {
+class ChatWindow extends StatelessWidget {
   final String name;
   final String number;
 
-  const ViewOfChat({super.key, required this.name, required this.number});
+  const ChatWindow({super.key, required this.name, required this.number});
 
   @override
   Widget build(BuildContext context) {

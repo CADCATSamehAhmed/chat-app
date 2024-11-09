@@ -1,3 +1,4 @@
+import 'package:chat_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,7 +25,7 @@ class ChatApp extends StatelessWidget {
             title: 'Chat App',
             theme: ThemeData(
               textTheme: GoogleFonts.interTextTheme(),
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              colorScheme: ColorScheme.fromSeed(seedColor: AppColors.mainColor),
               useMaterial3: true,
             ),
             home: const SplashView(),
