@@ -122,6 +122,17 @@ class AuthCubit extends Cubit<AuthStates> {
     }
   }
 
+  Future<void> logOut() async {
+    try {
+      await FirebaseAuth.instance.signOut().then((onValue) {
+        log("User logged out successfully");
+        emit(LogOutSuccess());
+      });
+    } catch (e) {
+      log("Error logging out: $e");
+    }
+  }
+
   void showInSnackBar({required BuildContext context, required String value}) {
     emit(ShowSnackBar());
     final snackBar = SnackBar(
