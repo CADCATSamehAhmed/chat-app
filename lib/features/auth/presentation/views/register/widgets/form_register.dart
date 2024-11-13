@@ -1,6 +1,6 @@
+import 'package:chat_app/core/shared_widgets/custom_divider.dart';
+import 'package:chat_app/core/shared_widgets/form_field.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_chat/core/widget/build_custom_divider.dart';
-import 'package:mini_chat/core/widget/default_text_form.dart';
 
 /*************  ✨ Codeium Command ⭐  *************/
 /// A form for the register screen.

@@ -1,5 +1,3 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Profileimage extends StatelessWidget {
@@ -7,24 +5,19 @@ class Profileimage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-        child: CircleAvatar(
-          radius: 50,
-          backgroundImage: AssetImage('images/profile.png'),
-          child: Align(
-            alignment: Alignment.bottomRight,
-            child: IconButton(
-              onPressed:(){
-                // add function
-              } ,
-              icon: Icon( Icons.edit),
-              color: Colors.white,
-            ),// Use ImageProvider here
-
-          ),
-
-        )
+    return CircleAvatar(
+      radius: 50,
+      backgroundImage: const AssetImage('images/profile.png'),
+      child: Align(
+        alignment: Alignment.bottomRight,
+        child: IconButton(
+          onPressed: () {
+            // add function
+          },
+          icon: const Icon(Icons.edit),
+          color: Colors.white,
+        ), // Use ImageProvider here
+      ),
     );
-
   }
 }

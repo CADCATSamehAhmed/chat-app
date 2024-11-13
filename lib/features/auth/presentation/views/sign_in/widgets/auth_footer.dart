@@ -1,8 +1,9 @@
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/features/auth/presentation/views/register/register.dart';
+import 'package:chat_app/features/auth/presentation/views/sign_in/sign_in.dart';
 import 'package:flutter/material.dart';
 
-Row buildAuthFooter({required BuildContext context, bool isRegister = true}) {
+Row buildAuthFooter({required BuildContext context, bool isRegister = false}) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -14,15 +15,19 @@ Row buildAuthFooter({required BuildContext context, bool isRegister = true}) {
       InkWell(
         onTap: () {
           isRegister
-              ? Navigator.of(context).push(
+              ? Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                    builder: (context) => const SignIn(),
+                  ),
+                  (route) => false)
+              : Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const Register(),
                   ),
-                )
-              : Navigator.of(context).pop();
+                );
         },
         child: Text(
-          isRegister ? 'Register here' : 'Login here',
+          isRegister ? 'Login here' : 'Register here',
           style: TextStyle(
             color: AppColors.mainColor,
           ),

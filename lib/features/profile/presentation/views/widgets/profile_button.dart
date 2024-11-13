@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfileButton extends StatelessWidget {
@@ -6,19 +5,16 @@ class ProfileButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      child: ElevatedButton.icon(
-          onPressed: (){
-            // fun to save btn
-          },
-          icon: Icon(Icons.save),
-          label: Text('Save Profile'),
-          style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              )
-          )),
-    );
+    return ElevatedButton.icon(
+        onPressed: () {
+          // fun to save btn
+        },
+        icon: const Icon(Icons.save),
+        label: const Text('Save Profile'),
+        style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.green,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            )));
   }
 }

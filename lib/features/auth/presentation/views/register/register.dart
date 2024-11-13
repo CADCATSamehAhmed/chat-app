@@ -1,5 +1,5 @@
+import 'package:chat_app/features/auth/presentation/views/register/register_body.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_chat/features/auth/presentation/view/register/register_body.dart';
 
 class Register extends StatelessWidget {
   const Register({super.key});
@@ -22,7 +22,7 @@ class Register extends StatelessWidget {
   /// [MaterialApp] widget tree for the registration screen.
   /// ****  d6e90c9a-bb3b-4986-a1f6-315787a5858e  ******
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: RegisterBody(),
       ),
