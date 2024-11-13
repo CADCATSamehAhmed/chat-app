@@ -1,5 +1,5 @@
 import 'package:chat_app/core/themes/colors.dart';
-import 'package:chat_app/features/auth/presentation/views/sign_up/sign_up_view.dart';
+import 'package:chat_app/features/auth/presentation/views/register/register.dart';
 import 'package:flutter/material.dart';
 
 Row buildAuthFooter({required BuildContext context, bool isRegister = true}) {
@@ -16,7 +16,7 @@ Row buildAuthFooter({required BuildContext context, bool isRegister = true}) {
           isRegister
               ? Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const SignUpView(),
+                    builder: (context) => const Register(),
                   ),
                 )
               : Navigator.of(context).pop();
