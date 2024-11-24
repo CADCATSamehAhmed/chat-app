@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'build_add_status_icon.dart';
 
 class BuildMyStatusAvatar extends StatelessWidget {
