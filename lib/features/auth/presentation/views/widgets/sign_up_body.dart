@@ -1,11 +1,5 @@
 import 'package:chat_app/core/themes/styles.dart';
-import 'package:chat_app/features/auth/presentation/views/widgets/auth_button.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/auth_footer.dart';
-import 'package:chat_app/features/auth/presentation/views/widgets/email_field.dart';
-import 'package:chat_app/features/auth/presentation/views/widgets/logo.dart';
-import 'package:chat_app/features/auth/presentation/views/widgets/name_field.dart';
-import 'package:chat_app/features/auth/presentation/views/widgets/password_field.dart';
-import 'package:chat_app/features/auth/presentation/views/widgets/phone_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

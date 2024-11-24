@@ -1,6 +1,6 @@
 import 'package:chat_app/core/themes/styles.dart';
 import 'package:chat_app/features/auth/data/view_model/auth_cubit.dart';
-import 'package:chat_app/features/auth/presentation/views/sign_in/sign_in.dart';
+import 'package:chat_app/features/auth/presentation/views/sign_in_view.dart';
 import 'package:chat_app/features/home/presentation/views/widgets/search_body.dart';
 import 'package:chat_app/features/profile/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +46,7 @@ class BuildAppBar extends StatelessWidget implements PreferredSizeWidget {
                       // ignore: use_build_context_synchronously
                       (onValue) => Navigator.of(context).pushAndRemoveUntil(
                             MaterialPageRoute(
-                              builder: (context) => const SignIn(),
+                              builder: (context) => const SignInView(),
                             ),
                             (route) => false,
                           ));

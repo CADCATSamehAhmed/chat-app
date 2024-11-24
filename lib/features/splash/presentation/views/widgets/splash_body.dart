@@ -1,4 +1,4 @@
-import 'package:chat_app/core/constants/app_images.dart';
+import 'package:chat_app/core/constants/images.dart';
 import 'package:chat_app/core/constants/variables.dart';
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/core/themes/styles.dart';
@@ -15,7 +15,7 @@ class SplashBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image(
-          image: const AssetImage(AppImages.logo),
+          image: AssetImage(Images.logo),
           height: screenWidth * .6,
           width: screenWidth * .6,
         ),
