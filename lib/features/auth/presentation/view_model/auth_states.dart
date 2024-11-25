@@ -22,8 +22,5 @@ class SignOutSuccess extends AuthStates {}
 
 class SignOutFailure extends AuthStates {}
 
-class ShowSnackBar extends AuthStates {}
+class ShowPasswordSuccess extends AuthStates {}
 
-class ShowPassswordSuccess extends AuthStates {}
-
-class LogOutSuccess extends AuthStates {}

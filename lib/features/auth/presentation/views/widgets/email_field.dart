@@ -16,7 +16,7 @@ class EmailField extends StatelessWidget {
         if (email!.isEmpty) {
           return 'email must not be empty';
         } else if (!regex.hasMatch(email)) {
-          return 'email must end with @gmail.com';
+          return 'Please enter a valid email address';
         } else{
           return null;
         }

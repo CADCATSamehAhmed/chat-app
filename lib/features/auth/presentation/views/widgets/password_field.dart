@@ -21,20 +21,12 @@ class PasswordField extends StatelessWidget {
       label: 'enter your password',
       onValidate: (String? value) {
         if (value!.isEmpty) {
-          return 'Please enter a password';
+          return 'Please enter your password';
         }
-        // Password must be at least 8 characters long
-        else if (value.length < 8) {
-          return 'Password must be at least 8 characters long';
+        final passwordRegex = RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$');
+        if (!passwordRegex.hasMatch(value)) {
+          return 'Password must be at least 8 characters long, contain a number, an uppercase letter, and a special character';
         }
-        // // Password must contain at least one number
-        // else if (RegExp(r'[0-9]').hasMatch(value)) {
-        //   return 'Password must contain at least one number';
-        // }
-        // // Password must contain at least one special character
-        // else if (RegExp(r'[!@#\$&*~]').hasMatch(value)) {
-        //   return 'Password must contain at least one special character';
-        // }
         return null;
       },
       iconData: Icons.lock,

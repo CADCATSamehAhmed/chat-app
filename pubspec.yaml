@@ -12,12 +12,18 @@ dependencies:
     sdk: flutter
 
   intl: ^0.19.0
+  bloc: ^8.1.4
+  flutter_bloc: ^8.1.6
   cupertino_icons: ^1.0.8
   google_fonts: ^6.2.1
   animate_do: ^3.3.4
   flutter_svg: ^2.0.10+1
+  firebase_core: ^3.7.0
+  firebase_auth: ^5.3.2
   flutter_screenutil: ^5.9.3
   page_transition: ^2.1.0
+  cloud_firestore: ^5.5.0
+  shared_preferences: ^2.3.3
 
 dev_dependencies:
   flutter_test:

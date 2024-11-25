@@ -15,7 +15,7 @@ class NameField extends StatelessWidget {
       label: 'enter your name',
       onValidate: (String? name) {
         if (name!.isEmpty) {
-          return 'name must not be empty';
+          return 'Please enter your name';
         } else {
           return null;
         }

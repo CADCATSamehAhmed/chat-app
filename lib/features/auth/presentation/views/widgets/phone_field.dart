@@ -7,16 +7,16 @@ class PhoneField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RegExp phoneRegExp = RegExp(r'^01[0-9]{9}$');
+    RegExp phoneRegExp = RegExp(r'^[0-9]{10}$');
     return  defaultTextForm(
       controller: phoneController,
       textInputType: TextInputType.phone,
       label: 'enter your phone',
       onValidate: (String? phone) {
         if (phone!.isEmpty) {
-          return 'phone number must not be empty';
+          return 'Please enter your phone number';
         } else if (!phoneRegExp.hasMatch(phone)) {
-          return 'the phone provided is not correct';
+          return 'Please enter a valid phone number';
         } else{
           return null;
         }
