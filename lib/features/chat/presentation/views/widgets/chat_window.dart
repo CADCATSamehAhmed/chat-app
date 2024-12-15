@@ -13,8 +13,21 @@ class ChatWindow extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       splashColor: AppColors.mainColor,
-      onTap: (){
+      onTap: () {
+        // to navigate to chat screen
 
+        /*
+
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => ChatScreen(
+              receiverId: receiverId,
+              name: name,
+            ),
+          ),
+        );
+
+        */
       },
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
@@ -40,8 +53,8 @@ class ChatWindow extends StatelessWidget {
                     children: [
                       Text(
                         name,
-                        style:
-                            AppFonts.font20.copyWith(fontWeight: FontWeight.bold),
+                        style: AppFonts.font20
+                            .copyWith(fontWeight: FontWeight.bold),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10).w,
@@ -65,7 +78,8 @@ class ChatWindow extends StatelessWidget {
                           radius: 10.r,
                           backgroundColor: AppColors.mainColor,
                           child: Text("2",
-                              style: AppFonts.font12.copyWith(color: Colors.white)),
+                              style: AppFonts.font12
+                                  .copyWith(color: Colors.white)),
                         ),
                       ),
                     ],

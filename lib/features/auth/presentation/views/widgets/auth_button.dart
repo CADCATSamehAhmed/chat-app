@@ -2,10 +2,11 @@ import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 
-SizedBox buildAuthButton(
-    {required BuildContext context,
-    bool isRegister = false,
-    required void Function()? onPressed}) {
+SizedBox buildAuthButton({
+  required BuildContext context,
+  bool isRegister = false,
+  required void Function()? onPressed,
+}) {
   return SizedBox(
     width: double.infinity,
     height: MediaQuery.of(context).size.height * 0.066,

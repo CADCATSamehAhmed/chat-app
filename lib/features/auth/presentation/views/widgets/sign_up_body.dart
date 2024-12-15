@@ -46,75 +46,72 @@ class _SignUpBodyState extends State<SignUpBody> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AuthCubit(),
-      child: BlocConsumer<AuthCubit, AuthStates>(
-          listener: (context, state) {
-            if (state is RegisterSuccess) {
-              Navigator.pushReplacement(
-                context,
-                PageTransition(
-                  type: PageTransitionType.fade,
-                  child: const HomeView(),
-                ),
-              );
-            }
-            else if(state is RegisterFailure){
-              showInSnackBar(context: context, value: state.error);
-            }
-          },
-          builder: (context, state) {
-            AuthCubit authCubit = AuthCubit.get(context);
-            return Form(
-              key: formKey,
-              child: ListView(
-                physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.all(30).w,
-                children: [
-                  buildLogo(context, width: 150.w),
-                  SizedBox(height: 15.h),
-                  Text(
-                    textAlign: TextAlign.center,
-                    'Register To New Account',
-                    style: AppFonts.font23,
-                  ),
-                  SizedBox(height: 15.h),
-                  NameField(nameController: name),
-                  SizedBox(height: 15.h),
-                  EmailField(emailController: email),
-                  SizedBox(height: 15.h),
-                  PhoneField(phoneController: phone),
-                  SizedBox(height: 15.h),
-                  PasswordField(
-                      passwordController: password,
-                      toggleVisibility: () {
-                        authCubit.showPassword();
-                      },
-                      isObscure: authCubit.isObscure),
-                  SizedBox(height: 15.h),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 30).h,
-                    child: buildAuthButton(
-                      context: context,
-                      onPressed: () async {
-                        if (formKey.currentState!.validate()) {
-                          AuthModel authModel = AuthModel(
-                              name: name.text,
-                              email: email.text,
-                              phone: phone.text,
-                              password: password.text);
-                          defaultLoading(
-                              context: context,
-                              asyncFunction:authCubit.signUp(
-                                  authModel: authModel, context: context)
-                          );
-                        }
-                      },
-                    ),
-                  ),
-                  buildAuthFooter(context: context, isRegister: true)
-                ],
+      child: BlocConsumer<AuthCubit, AuthStates>(listener: (context, state) {
+        if (state is RegisterSuccess) {
+          Navigator.pushReplacement(
+            context,
+            PageTransition(
+              type: PageTransitionType.fade,
+              child: const HomeView(),
+            ),
+          );
+        } else if (state is RegisterFailure) {
+          showInSnackBar(context: context, value: state.error);
+        }
+      }, builder: (context, state) {
+        AuthCubit authCubit = AuthCubit.get(context);
+        return Form(
+          key: formKey,
+          child: ListView(
+            physics: const BouncingScrollPhysics(),
+            padding: const EdgeInsets.all(30).w,
+            children: [
+              buildLogo(context, width: 150.w),
+              SizedBox(height: 15.h),
+              Text(
+                textAlign: TextAlign.center,
+                'Register To New Account',
+                style: AppFonts.font23,
               ),
-            );
-          }),
+              SizedBox(height: 15.h),
+              NameField(nameController: name),
+              SizedBox(height: 15.h),
+              EmailField(emailController: email),
+              SizedBox(height: 15.h),
+              PhoneField(phoneController: phone),
+              SizedBox(height: 15.h),
+              PasswordField(
+                  passwordController: password,
+                  toggleVisibility: () {
+                    authCubit.showPassword();
+                  },
+                  isObscure: authCubit.isObscure),
+              SizedBox(height: 15.h),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 30).h,
+                child: buildAuthButton(
+                  isRegister: true,
+                  context: context,
+                  onPressed: () async {
+                    if (formKey.currentState!.validate()) {
+                      AuthModel authModel = AuthModel(
+                          name: name.text,
+                          email: email.text,
+                          phone: phone.text,
+                          password: password.text);
+                      defaultLoading(
+                          context: context,
+                          asyncFunction: authCubit.signUp(
+                              authModel: authModel, context: context));
+                    }
+                  },
+                ),
+              ),
+              buildAuthFooter(context: context, isRegister: true)
+            ],
+          ),
+        );
+      }),
     );
   }
 }
