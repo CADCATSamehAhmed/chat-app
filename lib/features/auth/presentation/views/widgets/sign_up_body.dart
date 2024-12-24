@@ -12,6 +12,8 @@ import 'package:chat_app/features/auth/presentation/views/widgets/password_field
 import 'package:chat_app/features/auth/presentation/views/widgets/phone_field.dart';
 import 'package:chat_app/features/auth/presentation/views/widgets/show%20_snak_bar.dart';
 import 'package:chat_app/features/home/presentation/views/home_view.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,6 +43,15 @@ class _SignUpBodyState extends State<SignUpBody> {
     password.dispose();
     super.dispose();
   }
+
+  //add users
+  Future addUsers() async{
+    await FirebaseFirestore.instance.collection('users').add({
+
+    });
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
