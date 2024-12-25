@@ -41,7 +41,7 @@ class CustomSearch extends SearchDelegate {
           : _firestore
               .collection('users')
               .where('name', isGreaterThanOrEqualTo: query)
-              .where('name', isLessThan: query + 'z')
+              .where('name', isLessThan: '${query}z')
               .get(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -80,7 +80,7 @@ class CustomSearch extends SearchDelegate {
                   close(context, userData);
                 },
               );
-            }).toList(),
+            }),
           ],
         );
       },
