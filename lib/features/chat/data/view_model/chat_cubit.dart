@@ -1,4 +1,6 @@
-import 'dart:developer';
+import 'package:chat_app/features/chat/data/model/chat_summary.dart';
+import 'package:chat_app/features/chat/data/model/message_model.dart';
+import 'package:chat_app/features/chat/data/repo/chats_repo.dart';
 import 'package:chat_app/features/chat/data/view_model/chat_states.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,52 +14,24 @@ class ChatCubit extends Cubit<ChatState> {
   final TextEditingController messageController = TextEditingController();
   final ScrollController scrollController = ScrollController();
   bool isEmojiVisible = false;
+  ChatsRepo chatsRepo = ChatsRepo();
 
   Future<void> sendMessage({
     required String text,
     required String receiverId,
   }) async {
     if (text.trim().isEmpty) return;
-
     final currentUser = auth.currentUser;
     if (currentUser == null) return;
-
     String senderId = currentUser.uid;
-
     List<String> ids = [senderId, receiverId];
     ids.sort();
     String chatId = ids.join('_');
 
-    final messageData = {
-      'senderId': senderId,
-      'receiverId': receiverId,
-      'text': text,
-      'timestamp': FieldValue.serverTimestamp(),
-    };
-
-    await FirebaseFirestore.instance
-        .collection('messages')
-        .doc(chatId)
-        .collection('chats')
-        .add(messageData);
-
-    final chatSummaryData = {
-      'lastMessage': text,
-      'lastMessageTime': FieldValue.serverTimestamp(),
-      'participants': [senderId, receiverId],
-    };
-
-    await FirebaseFirestore.instance
-        .collection('messages')
-        .doc(chatId)
-        .set(chatSummaryData, SetOptions(merge: true))
-        .then((onValue) {
-      emit(MessageSentSuccessed());
-    }).catchError((onError) {
-      log('send message error => ${onError.toString()}');
-      emit(MessageSentFailed(onError.toString()));
-    });
-
+    MessageModel messageData = MessageModel(senderId, receiverId, text, FieldValue.serverTimestamp());
+    await chatsRepo.sendMessage(chatId, messageData);
+    emit(MessageSentSuccessed());
+    emit(MessageSentFailed(onError.toString()));
     messageController.clear();
 
     // Scroll to the bottom after sending a message
@@ -82,6 +56,12 @@ class ChatCubit extends Cubit<ChatState> {
         .collection('chats')
         .orderBy('timestamp', descending: false)
         .snapshots();
+  }
+
+  Stream<List<ChatSummary>> getChats() {
+    final currentUser = auth.currentUser;
+    if (currentUser == null) return const Stream.empty();
+    return chatsRepo.getChats(currentUser.uid);
   }
 
   void toggleEmojiPicker() {
