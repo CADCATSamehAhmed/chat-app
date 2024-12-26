@@ -1,4 +1,4 @@
-import 'package:chat_app/features/chat/data/view_model/chat_cubit.dart';
+import 'package:chat_app/features/chat/presentation/view_model/chat_cubit.dart';
 import 'package:chat_app/features/chat/presentation/views/widgets/emoji_picker.dart';
 import 'package:chat_app/features/chat/presentation/views/widgets/message_input.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

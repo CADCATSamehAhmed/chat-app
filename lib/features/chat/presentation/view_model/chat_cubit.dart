@@ -1,11 +1,11 @@
 import 'package:chat_app/features/chat/data/model/chat_summary.dart';
 import 'package:chat_app/features/chat/data/model/message_model.dart';
 import 'package:chat_app/features/chat/data/repo/chats_repo.dart';
-import 'package:chat_app/features/chat/data/view_model/chat_states.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'chat_states.dart';
 
 class ChatCubit extends Cubit<ChatState> {
   ChatCubit() : super(ChatInitial());
