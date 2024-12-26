@@ -16,6 +16,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -33,7 +34,8 @@ class _HomeViewState extends State<HomeView> {
                 homeCubit.changeBottomNavigationBarIndex(index);
               },
             ),
-            floatingActionButton: HomeFloatingActionButton(index: homeCubit.bottomNavBarIndex),
+            floatingActionButton:
+                HomeFloatingActionButton(index: homeCubit.bottomNavBarIndex),
           );
         },
       ),
