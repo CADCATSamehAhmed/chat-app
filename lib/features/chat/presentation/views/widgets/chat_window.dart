@@ -1,20 +1,26 @@
 import 'package:chat_app/core/themes/colors.dart';
 import 'package:chat_app/core/themes/styles.dart';
+import 'package:chat_app/features/chat/data/model/chat_summary.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../chat_screen_view.dart';
 
 class ChatWindow extends StatelessWidget {
-  final String name;
-  final String number;
+  final ChatSummary chat;
 
-  const ChatWindow({super.key, required this.name, required this.number});
+  const ChatWindow({super.key, required this.chat});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       splashColor: AppColors.mainColor,
-      onTap: (){
-
+      onTap: () {
+        // to navigate to chat screen
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => ChatScreen(chat: chat),
+          ),
+        );
       },
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
@@ -39,14 +45,14 @@ class ChatWindow extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        name,
-                        style:
-                            AppFonts.font20.copyWith(fontWeight: FontWeight.bold),
+                        chat.name!,
+                        style: AppFonts.font20
+                            .copyWith(fontWeight: FontWeight.bold),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10).w,
                         child: Text(
-                          "12:00 PM",
+                          '${chat.lastMessageTime}',
                           style: AppFonts.font14.copyWith(color: Colors.grey),
                         ),
                       ),
@@ -56,7 +62,7 @@ class ChatWindow extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "# $number",
+                        chat.lastMessage!,
                         style: AppFonts.font18.copyWith(color: Colors.grey),
                       ),
                       Padding(
@@ -65,7 +71,8 @@ class ChatWindow extends StatelessWidget {
                           radius: 10.r,
                           backgroundColor: AppColors.mainColor,
                           child: Text("2",
-                              style: AppFonts.font12.copyWith(color: Colors.white)),
+                              style: AppFonts.font12
+                                  .copyWith(color: Colors.white)),
                         ),
                       ),
                     ],
