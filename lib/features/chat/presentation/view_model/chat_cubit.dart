@@ -29,15 +29,35 @@ class ChatCubit extends Cubit<ChatState> {
     String chatId = ids.join('_');
 
     MessageModel messageData = MessageModel(senderId, receiverId, text, FieldValue.serverTimestamp());
-    await chatsRepo.sendMessage(chatId, messageData);
-    emit(MessageSentSuccessed());
-    emit(MessageSentFailed(onError.toString()));
+    final response =await chatsRepo.sendMessage(chatId, messageData);
+    if(response){
+      emit(MessageSentSuccessed());
+    }else{
+      emit(MessageSentFailed(onError.toString()));
+    }
     messageController.clear();
 
     // Scroll to the bottom after sending a message
     Future.delayed(const Duration(milliseconds: 100), () {
       scrollToBottom();
     });
+  }
+
+  Future<void> startNewChat({
+    required String partnerId,
+  }) async {
+    final currentUser = auth.currentUser;
+    if (currentUser == null) return;
+    String senderId = currentUser.uid;
+    List<String> ids = [senderId, partnerId];
+    ids.sort();
+    String chatId = ids.join('_');
+    final response = await chatsRepo.startChat(chatId, ids);
+    if(response){
+      emit(MessageSentSuccessed());
+    }else{
+      emit(MessageSentFailed(onError.toString()));
+    }
   }
 
   Stream<QuerySnapshot> getMessages({required String receiverId}) {

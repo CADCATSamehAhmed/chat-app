@@ -13,7 +13,7 @@ class StartNewChat extends StatelessWidget {
       body: ListView.builder(
           itemCount: users.length,
           itemBuilder: (context, index) {
-            return GetUserName(documentId: users[index]);
+            return GetUserName(chatPartnerId: users[index]);
           }),
     );
   }

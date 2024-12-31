@@ -51,17 +51,34 @@ class ChatsRepo {
     });
   }
 
-  Future<void> sendMessage(String chatId,MessageModel message) async {
-
+  Future<bool> sendMessage(String chatId,MessageModel message) async {
+    try{
       await FirebaseFirestore.instance
           .collection('chats')
           .doc(chatId)
           .collection('messages')
-          .add(message.toMap())
-          .then((onValue) {
-      }).catchError((onError) {
-        log('send message error => ${onError.toString()}');
+          .add(message.toMap());
+      return true;
+    }catch (error){
+      log('send message error => ${error.toString()}');
+      rethrow;
+    }
+  }
+
+  Future<bool> startChat(String chatId,List<String> participants) async {
+    try{
+      await FirebaseFirestore.instance
+          .collection('chats')
+          .doc(chatId)
+          .set({
+        'chatId': chatId,
+        'participants': participants,
       });
+      return true;
+    } catch(error){
+      log('send message error => ${error.toString()}');
+      rethrow;
+    }
   }
 
   Future<Map<String, dynamic>> getOtherUserData(String otherUserId) async {
